@@ -1,0 +1,140 @@
+.Container {
+  width: 100%;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.Container.Animation {
+  animation: logAnim 500ms ease-in-out;
+}
+
+@keyframes logAnim {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.titles {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+  padding-left: 16px;
+}
+
+.titles>div:first-of-type {
+  margin-right: 220px;
+}
+
+.titles>div:last-of-type {
+  margin-left: 100px;
+}
+
+.Item {
+  height: 77px;
+  display: grid;
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  border-radius: 12px;
+  transition: all 300ms;
+}
+
+.Item:hover {
+  background: white;
+  box-shadow: 0px 2px 24px rgba(40, 42, 62, 0.06);
+  border: 1px solid white;
+}
+
+.Item>.Name {
+  min-width: 130px;
+  margin: auto 60px auto 10px;
+}
+
+.Item>.Date {
+  margin: auto 60px auto 0;
+}
+
+.Item>.Change {
+  margin: auto auto auto 0;
+}
+
+.Item>.button {
+  margin: auto 0;
+}
+
+.Item>img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.Container>.Item {
+  margin-bottom: 15px;
+}
+
+.Item.Full {
+  padding: 0 16px;
+  grid-template-columns: 45px auto auto 1fr auto;
+}
+
+.Item>img {
+  border-radius: 45px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.SeeAll {
+  display: flex;
+  cursor: pointer;
+}
+
+@media (max-width: 550px) {
+  .Container.Animation {
+    animation: none;
+  }
+
+  .Item {
+    height: auto;
+    grid-template: 1fr 1fr/42px auto 1fr;
+    gap: 5px 10px;
+    padding: 16px;
+  }
+
+  .Item>img {
+    width: 42px;
+    grid-row: 1/3;
+    grid-column: 1;
+  }
+
+  .Item>.Change {
+    grid-column: 2/4;
+    grid-row: 1;
+    margin: auto auto 0 0;
+  }
+
+  .Item>.Name {
+    margin: 0 auto auto 0;
+    grid-column: 2;
+    grid-row: 2;
+    padding-right: 10px;
+    border-right: 1px solid #e1e2e6;
+    min-width: 0px;
+  }
+
+  .Item>.Date {
+    margin: 0 auto auto 0;
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .Container>.Item {
+    margin-bottom: 10px;
+  }
+}

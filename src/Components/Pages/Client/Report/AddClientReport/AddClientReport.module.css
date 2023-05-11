@@ -1,0 +1,185 @@
+.StepContainer {
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 0 30px;
+    display: grid;
+    grid-template-columns: 2fr 80px 1.8fr 80px 1.8fr 80px 2fr;
+}
+
+.StepItem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.StepItem>img {
+    width: 80px;
+}
+
+.StepItem>.StepTitle {
+    font-size: var(--size-5);
+    font-weight: 400;
+    color: var(--lightgray);
+    white-space: nowrap;
+}
+
+.StepItem.active>.StepTitle {
+    font-size: var(--size-5);
+    font-weight: 500;
+    color: var(--darkgray);
+    white-space: nowrap;
+}
+
+.Line {
+    height: 4px;
+    background: #FFFAE9;
+    margin: 38px 0 auto;
+    transition: all 300ms ease;
+}
+
+.Line.HalfLine {
+    background: linear-gradient(90deg, rgba(255, 208, 32, 1) 56%, rgba(255, 250, 233, 1) 56%);
+}
+
+.Line.FullLine {
+    background: #ffd020;
+}
+
+.Card {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 25px rgba(40, 42, 62, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px;
+    display: none;
+}
+
+.FadeIn {
+    animation: FadeIn 500ms ease;
+}
+
+.SlideToLeft {
+    animation: SlideToLeft 300ms ease;
+}
+
+.SlideToRight {
+    animation: SlideToRight 300ms ease;
+}
+
+@keyframes SlideToLeft {
+    0% {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes SlideToRight {
+    0% {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes FadeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.Card.active {
+    display: block;
+}
+
+.TwoColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.ContactButton {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: var(--size-6);
+    font-weight: 400;
+    color: var(--lightgray);
+    cursor: pointer;
+}
+
+.ContactButton.active {
+    font-weight: 500;
+    color: var(--darkgray);
+}
+
+.ContactButton.active>svg>path {
+    stroke: #FFD020;
+}
+
+.CheckboxContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 0;
+}
+
+.AffectedPersonContainer {
+    display: grid;
+    grid-template-columns: 74px 1fr 20px 1fr;
+    align-items: center;
+}
+
+.NotifiedPersonContainer {
+    display: grid;
+    grid-template-columns: 74px 1fr 20px 1fr 20px 1fr 20px 1fr;
+    align-items: center;
+}
+
+.MiniLine {
+    height: 1px;
+    background: #E1E2E5;
+    margin: auto 0;
+    transition: all 300ms ease;
+}
+
+.reportUl {
+    padding: 0;
+    list-style: none;
+}
+
+.reportUl>li {
+    font-size: var(--size-6);
+    font-weight: 400;
+    color: var(--lightgray);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.reportUl>li::before {
+    content: "• ";
+    font-size: 30px;
+    line-height: 12px;
+    color: #F58986;
+}
+
+.textarea {
+    width: 100%;
+}

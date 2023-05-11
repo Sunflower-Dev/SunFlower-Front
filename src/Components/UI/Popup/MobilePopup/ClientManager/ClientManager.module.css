@@ -1,0 +1,9 @@
+.ActionItem {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.ActionItem:last-of-type {
+  margin-bottom: 0;
+}

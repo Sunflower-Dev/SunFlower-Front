@@ -1,0 +1,42 @@
+.MonthView {
+  display: flex;
+  align-items: center;
+}
+
+.MonthText {
+  margin: 0 10px;
+  font-size: var(--size-10);
+  font-weight: 600;
+}
+.MonthView > img {
+  cursor: pointer;
+}
+.MonthView > img.deactive {
+  opacity: 0.4;
+}
+
+@media (max-width: 550px) {
+  .MonthView {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 16px;
+  }
+
+  .MonthText {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    font-weight: 700;
+  }
+  .MonthView > img:first-of-type {
+    grid-column: 2;
+    grid-row: 1;
+    margin-right: 18px;
+  }
+  .MonthView > img:last-of-type {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}

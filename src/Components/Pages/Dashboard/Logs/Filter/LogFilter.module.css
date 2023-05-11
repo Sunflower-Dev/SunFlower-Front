@@ -1,0 +1,77 @@
+.Container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #e1e2e6;
+  width: 360px;
+  padding: 40px 30px 30px;
+  animation: slideIN 300ms ease-in-out;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+}
+
+@keyframes slideIN {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.Container.Close {
+  animation: slideOUT 300ms ease-in-out;
+}
+
+@keyframes slideOUT {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.Header {
+  border-bottom: 1px solid #e1e2e6;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.Header > img:last-of-type {
+  cursor: pointer;
+}
+.Types {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e1e2e6;
+}
+@media (max-width: 550px) {
+  .Container {
+    position: relative;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding: 0 16px 80px;
+    animation: none;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+  }
+  .Container.Close {
+    animation: none;
+  }
+  .Types {
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e1e2e6;
+  }
+}

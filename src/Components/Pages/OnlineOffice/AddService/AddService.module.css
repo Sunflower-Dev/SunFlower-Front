@@ -1,0 +1,76 @@
+.header {
+  display: grid;
+  grid-template: 1fr / 1fr 30px;
+  align-items: center;
+  gap: 8px 0;
+}
+
+.header>img {
+  cursor: pointer;
+}
+
+.body {
+  margin-top: 40px;
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+  gap: 20px;
+}
+
+.inputrow {
+  height: fit-content;
+}
+
+.Action {
+  margin-top: 40px;
+  display: flex;
+  gap: 14px;
+}
+
+.FullFormTextArea {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 550px) {
+  .header {
+    display: grid;
+    grid-template: 1fr /24px 1fr 24px;
+    align-items: center;
+    gap: 0;
+    padding: 16px;
+  }
+
+  .header>span {
+    grid-column: 2;
+    margin: auto;
+  }
+
+  .header>img {
+    grid-column: 1;
+    grid-row: 1;
+    width: 24px;
+  }
+
+  .body {
+    margin-top: 25px;
+    grid-template: repeat(3, auto) / 1fr;
+    gap: 18px;
+    padding: 0 16px;
+  }
+
+  .body>div {
+    grid-column: 1;
+  }
+
+  .Action {
+    gap: 0;
+    padding: 16px;
+  }
+
+  .Action>button {
+    width: 100%;
+  }
+}

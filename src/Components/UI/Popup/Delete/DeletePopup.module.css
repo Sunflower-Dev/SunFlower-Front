@@ -1,0 +1,31 @@
+.Container {
+  display: grid;
+  grid-template: auto auto auto auto / 1fr 1fr;
+  gap: 0 14px;
+}
+.Container > img {
+  grid-column: 1/3;
+  margin: auto;
+}
+.Title,
+.SubTitle {
+  grid-column: 1/3;
+  margin: auto;
+}
+.SubTitle {
+  margin-top: 6px;
+}
+.cancelButton {
+  margin-top: 40px;
+  padding: 14px;
+  height: 52px;
+  font-weight: 500;
+  font-size: var(--size-6);
+}
+.deleteButton {
+  margin-top: 40px;
+  padding: 14px;
+  height: 52px;
+  font-weight: 500;
+  font-size: var(--size-6);
+}

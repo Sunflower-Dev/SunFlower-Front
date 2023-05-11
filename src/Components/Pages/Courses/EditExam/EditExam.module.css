@@ -1,0 +1,126 @@
+.Card {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 25px rgba(40, 42, 62, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.formContainer {
+    overflow: auto;
+    height: calc(100% - 80px);
+}
+
+.formContainer::-webkit-scrollbar {
+    margin-left: 10px;
+}
+
+.AnswerContainer {
+    display: grid;
+    grid-template: 1fr 1fr /1fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.inputContainer {
+    text-align: left;
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    padding: 0 30px 0 15px;
+    height: 62px;
+    border: 1.2px solid #e1e2e6;
+    border-radius: 8px;
+    margin-top: 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: var(--size-5);
+    color: var(--lightgray);
+    transition: all 0.4s;
+}
+
+.input::placeholder {
+    color: var(--lightgray);
+    opacity: 1;
+    /* Firefox */
+}
+
+.label {
+    color: var(--darkgray);
+    font-weight: 500;
+    size: 16px;
+}
+
+.input:hover {
+    background: #fdfdfd;
+    border: 1.2px solid #c4c7cc;
+}
+
+.input:active,
+.input:focus {
+    background: #fdfdfd;
+    border: 1.2px solid #c4c7cc;
+    outline: none !important;
+    color: var(--darkgray);
+}
+
+.inputContainer>img {
+    position: absolute;
+    width: 22px;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.MobileTopGrid {
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr;
+    padding: 20px 16px 25px;
+}
+
+.MobileTopGrid>div:first-of-type {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+@media (max-width:550px) {
+    .formContainer {
+        overflow: auto;
+        height: calc(100% - 110px);
+        padding: 0 0 0 16px;
+    }
+
+    .Card {
+        box-shadow: none;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 15px;
+        border: 1px solid #E1E2E6;
+    }
+
+    .QuestionInput {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #E1E2E6;
+    }
+
+    .AnswerContainer {
+        grid-template: 1fr 1fr 1fr 1fr/1fr;
+        gap: 18px;
+        margin-top: 20px;
+    }
+
+    .input {
+        font-weight: 400;
+        font-size: var(--size-3);
+        height: 56px;
+    }
+
+    .label {
+        font-size: var(--size-4);
+    }
+
+}

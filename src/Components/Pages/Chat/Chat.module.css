@@ -1,0 +1,277 @@
+.Container {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  height: 100%;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  gap: 30px;
+}
+
+.UserList {
+  background: #ffffff;
+  box-shadow: 0px 2px 25px rgba(40, 42, 62, 0.05);
+  border-radius: 15px;
+  padding: 25px 8px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+}
+
+.ListHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  margin-bottom: 20px;
+}
+
+.ListHeader>svg {
+  cursor: pointer;
+}
+
+.ChatList {
+  background: #ffffff;
+  box-shadow: 0px 2px 25px rgba(40, 42, 62, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: auto;
+}
+
+.ChatHeader {
+  background: #f9f9fc;
+  border-radius: 15px;
+  display: grid;
+  grid-template: 1fr 1fr/70px 1fr 26px;
+  padding: 15px 20px 15px 15px;
+  gap: 2px 15px;
+}
+
+.ChatHeader>img {
+  border-radius: 70px;
+  grid-row: 1/3;
+}
+
+.SearchHeader {
+  background: #f9f9fc;
+  border-radius: 15px;
+  display: grid;
+  grid-template: 1fr /42px 1fr 42px 42px;
+  padding: 24px 15px;
+  gap: 15px;
+  align-items: center;
+}
+
+.HeaderName {
+  margin: auto auto 0 0;
+}
+
+.HeaderStatus {
+  grid-row: 2;
+}
+
+.HeaderAction {
+  grid-row: 1/3;
+  margin: auto;
+  cursor: pointer;
+}
+
+.MessageBox {
+  border: 1.2px solid #e1e2e6;
+  box-sizing: border-box;
+  border-radius: 8px;
+  min-height: 63px;
+  max-height: 150px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 26px 26px 51px;
+  padding: 6px;
+}
+
+.MessageBox>.textarea {
+  border: none;
+  outline: none;
+  padding: 14px;
+  resize: none;
+  font-family: "Poppins", sans-serif;
+  height: calc(100% - 28px);
+  box-sizing: content-box;
+}
+
+.MessageBox>.textarea::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--lightgray);
+  opacity: 1;
+  /* Firefox */
+}
+
+.MessageBox>img,
+.MessageBox>label {
+  margin: auto auto 12px auto;
+  cursor: pointer;
+}
+
+.MessageBox>label {
+  display: grid;
+}
+
+.Emoji {
+  position: absolute;
+  bottom: 135px;
+  right: 70px;
+}
+
+.actionContainer {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 18px rgba(40, 42, 62, 0.15);
+  border-radius: 12px;
+  width: 226px;
+  top: 50px;
+  right: 80px;
+  z-index: 10;
+  padding: 14px 16px;
+  flex-direction: column;
+}
+
+.fadein {
+  animation: FadeIN 300ms ease-in-out;
+}
+
+.fadeout {
+  animation: FadeOUT 300ms ease-in-out;
+}
+
+@keyframes FadeIN {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes FadeOUT {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+}
+
+.ActionItem {
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e2e6;
+  display: flex;
+  cursor: pointer;
+}
+
+.ActionItem>img {
+  margin-right: 8px;
+}
+
+.actionContainer>.ActionItem:first-of-type {
+  padding: 0 0 10px;
+}
+
+.actionContainer>.ActionItem:last-of-type {
+  padding: 10px 0 0;
+  border-bottom: none;
+}
+
+@media (max-width: 550px) {
+  .Container {
+    grid-template-columns: 100%;
+    box-sizing: border-box;
+    gap: 0;
+  }
+
+  .UserList {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0 16px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+
+  .ListHeader {
+    padding: 24px 0 9px;
+    margin-bottom: 20px;
+  }
+
+  .ListHeader>svg {
+    width: 24px;
+  }
+
+  .ChatList {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0 0 12px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+  }
+
+  .ChatHeader {
+    background: white;
+    border-radius: 0;
+    grid-template: 1fr 1fr/24px 38px 1fr 24px;
+    padding: 20px 10px 10px;
+    gap: 0 8px;
+    box-shadow: 0px 2px 25px rgba(40, 42, 62, 0.03);
+  }
+
+  .ChatHeader>img {
+    border-radius: unset;
+    grid-row: 1/3;
+  }
+
+  .ChatPage_Avatar {
+    border-radius: 30px !important;
+    margin: auto 0 auto auto;
+  }
+
+  .ChatHeader :first-child {
+    margin: auto;
+    width: 22px;
+  }
+
+  .MessageBox {
+    border: 1px solid #e1e2e6;
+    border-radius: 8px;
+    min-height: 52px;
+    max-height: 130px;
+    gap: 16px;
+    grid-template-columns: 1fr 22px 22px 44px;
+    padding: 4px;
+    margin: 0 16px;
+  }
+
+  .MessageBox>.textarea {
+    padding: 11px;
+    height: calc(100% - 24px);
+    background: transparent;
+  }
+
+  .MessageBox>img,
+  .MessageBox>label {
+    width: 22px;
+    margin: auto auto 11px auto;
+  }
+}

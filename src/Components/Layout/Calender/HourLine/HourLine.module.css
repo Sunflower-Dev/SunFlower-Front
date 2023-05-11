@@ -1,0 +1,29 @@
+.Row {
+  position: relative;
+  width: fit-content;
+  min-width: 100%;
+}
+.HourLine {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-weight: 500;
+  font-size: var(--size-5);
+  color: var(--darkgray);
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.line {
+  border-top: 1.5px dashed #e1e2e6;
+}
+
+.Container {
+  height: 118px;
+  display: grid;
+  gap: 11px;
+}

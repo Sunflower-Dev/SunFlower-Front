@@ -1,0 +1,266 @@
+.header {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 30px;
+  align-items: center;
+  gap: 8px 0;
+}
+
+.header>img {
+  cursor: pointer;
+}
+
+.NormalButton {
+  display: inline-flex;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.AddCourseContainer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: end;
+}
+
+.CourseContainer {
+  transition: all 300ms;
+  margin-bottom: 15px;
+}
+
+.CourseItem {
+  display: grid;
+  grid-template-columns: 22px 1fr 22px 22px 36px;
+  gap: 16px;
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 15px;
+  align-items: center;
+  background: #fff;
+  z-index: 10;
+}
+
+.CourseItem.active {
+  background: #f7f7fa;
+}
+
+.CourseItem>img {
+  cursor: pointer;
+  z-index: 10;
+}
+
+.CourseItem>img:first-of-type {
+  cursor: grab;
+}
+
+.DropDownCircle {
+  background: #edeef1;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+  display: flex;
+  cursor: pointer;
+  transition: all 300ms;
+  z-index: 10;
+}
+
+.CourseItem.active>.DropDownCircle {
+  background: #f58986;
+}
+
+.DropDownCircle>svg {
+  margin: auto;
+  transition: all 300ms;
+}
+
+.CourseItem.active>.DropDownCircle>svg {
+  transform: rotate(180deg);
+}
+
+.CourseItem.active>.DropDownCircle>svg>path {
+  stroke: #fff;
+}
+
+.CourseBody {
+  height: 0;
+  opacity: 0;
+  transition: all 300ms;
+  z-index: -10;
+}
+
+.CourseBody.active {
+  height: max-content;
+  opacity: 1;
+  padding: 12px 0 12px 30px;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 2;
+}
+
+.LessonItem {
+  display: grid;
+  grid-template-columns: 22px 1fr 22px;
+  gap: 20px;
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 15px;
+  align-items: center;
+  background: #fff;
+  position: relative;
+}
+
+.LessonItem.Deleting {
+  grid-template-columns: 22px 1fr auto auto;
+
+}
+
+.AddTraining {
+  margin: 0 auto auto 0;
+}
+
+.editInput {
+  width: 100%;
+  padding: 0;
+  border: none;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: var(--size-6);
+  color: var(--lightgray);
+  transition: all 0.4s;
+}
+
+.editInput:hover {
+  border: none;
+}
+
+.editInput:active,
+.editInput:focus {
+  border: none;
+  outline: none !important;
+  color: var(--darkgray);
+}
+
+
+
+.actionContainer {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 18px rgba(40, 42, 62, 0.15);
+  border-radius: 12px;
+  width: 226px;
+  top: 8px;
+  right: 42px;
+  z-index: 10;
+  padding: 14px 16px;
+  flex-direction: column;
+}
+
+.fadein {
+  animation: FadeIN 300ms ease-in-out;
+}
+
+.fadeout {
+  animation: FadeOUT 300ms ease-in-out;
+}
+
+
+@keyframes FadeIN {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes FadeOUT {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+}
+
+.ActionItem {
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e2e6;
+  display: flex;
+  cursor: pointer;
+}
+
+.ActionItem>img {
+  margin-right: 8px;
+}
+
+.actionContainer>.ActionItem:first-of-type {
+  padding: 0 0 10px;
+}
+
+.actionContainer>.ActionItem:last-of-type {
+  padding: 10px 0 0;
+  border-bottom: none;
+}
+
+@media (max-width:550px) {
+
+  .CourseItem {
+    grid-template-columns: 18px 1fr 18px 18px 28px;
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .CourseItem.active {
+    background: #ffffff;
+    border: none;
+    box-shadow: 0px 2px 15px rgba(40, 42, 62, 0.04);
+  }
+
+  .CourseItem>img {
+    width: 18px;
+  }
+
+  .DropDownCircle {
+    background: #edeef1;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+  }
+
+  .DropDownCircle>svg {
+    width: 10px;
+  }
+
+  .LessonItem {
+    grid-template-columns: 18px 1fr 18px;
+    gap: 8px;
+    padding: 16px;
+    background: transparent;
+    position: relative;
+  }
+
+  .CourseBody.active {
+    padding: 10px 0 12px 20px;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 2;
+  }
+}

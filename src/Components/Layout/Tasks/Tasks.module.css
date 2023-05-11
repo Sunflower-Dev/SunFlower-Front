@@ -1,0 +1,92 @@
+.TaskContainer {
+  display: grid;
+  grid-template-rows: auto 49px 1fr;
+}
+
+.Tab {
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 49px;
+  padding: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  color: var(--lightgray);
+  font-size: var(--size-3);
+  font-weight: 500;
+}
+
+.TaskItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.TaskItem.active {
+  background-color: var(--SecondaryRed);
+  border-radius: 8px;
+  color: white;
+}
+
+.Container {
+  box-sizing: border-box;
+  padding-top: 25px;
+  display: none;
+  grid-template-rows: 1fr;
+  gap: 18px;
+  overflow: auto;
+}
+
+.Container.active {
+  display: grid;
+}
+
+.Task {
+  box-sizing: border-box;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e1e2e6;
+}
+
+.bottomShadow {
+  position: absolute;
+  height: 72px;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 15px 15px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+}
+
+.TaskContainer>svg {
+  margin: auto;
+}
+
+.Bullet {
+  background: #FFD020;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  margin: 0 4px 10px;
+}
+
+@media (max-width: 550px) {
+  .Task {
+    border-bottom: none;
+    background: #f9f9fc;
+    border-radius: 12px;
+    padding: 18px;
+    height: fit-content;
+  }
+
+  .Container {
+    padding-top: 15px;
+    gap: 10px;
+    grid-template-rows: min-content;
+  }
+
+  .TaskContainer {
+    grid-template-rows: auto auto 49px 1fr;
+  }
+}

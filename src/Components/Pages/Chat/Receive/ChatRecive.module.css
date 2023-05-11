@@ -1,0 +1,48 @@
+.Container {
+  display: grid;
+  grid-template: auto auto/ 45px 1fr;
+  gap: 4px 10px;
+  align-items: start;
+  justify-items: start;
+  margin-bottom: 10px;
+}
+
+.Message {
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  border-radius: 15px 15px 15px 0px;
+  padding: 15px;
+  max-width: 70%;
+}
+.Message > img {
+  max-width: 100%;
+}
+.Message > a {
+  color: #0000ee;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.Container > img {
+  border-radius: 45px;
+  margin: auto auto 0;
+}
+.Time {
+  grid-column: 2;
+}
+
+@media (max-width: 550px) {
+  .Container {
+    grid-template: auto auto/ 1fr;
+    gap: 4px;
+  }
+
+  .Message {
+    max-width: 74%;
+    background: #ffffff;
+    border: 1px solid #e1e2e6;
+  }
+  .Time {
+    grid-column: 1;
+  }
+}

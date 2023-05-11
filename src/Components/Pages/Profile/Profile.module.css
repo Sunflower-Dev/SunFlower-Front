@@ -1,0 +1,399 @@
+.Container {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+}
+
+.Tabs {
+  display: flex;
+  gap: 35px;
+}
+
+.TabItem {
+  font-weight: 400;
+  font-size: var(--size-6);
+  color: var(--darkgray);
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.TabItem:hover {
+  transform: translateY(-4px);
+}
+
+.TabItem.active {
+  font-weight: 500;
+  color: var(--black);
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ffd020;
+}
+
+@keyframes fadeIN {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.tabbody {
+  padding: 25px 0;
+  display: none;
+}
+
+.tabbody.active {
+  display: grid;
+  animation: fadeIN 500ms ease;
+}
+
+.Card {
+  background: #ffffff;
+  box-shadow: 0px 2px 25px rgba(40, 42, 62, 0.05);
+  border-radius: 15px;
+  padding: 25px 20px;
+}
+
+.TaskContainerLarge {
+  max-height: 360px;
+  overflow: auto;
+  padding: 25px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.TaskContainerMini {
+  max-height: 305px;
+  overflow: auto;
+  /* padding: 25px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; */
+}
+
+.tasksgap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.CheckBox_white {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 14px;
+  transition: all 300ms;
+}
+
+.CheckBox_gray {
+  background: #f9f9fc;
+  border-radius: 8px;
+  padding: 14px;
+  transition: all 300ms;
+}
+
+.CheckBox_white:hover {
+  box-shadow: 0px 6px 20px rgba(40, 42, 62, 0.08);
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: fit-content;
+}
+
+.TopInfo {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e1e2e6;
+  display: grid;
+  grid-template: 110px auto auto / 1fr 1fr;
+}
+
+.TopInfo>img {
+  grid-column: 1/3;
+  grid-row: 1;
+  border-radius: 110px;
+  margin: auto;
+  object-fit: cover;
+  object-position: top;
+
+}
+
+.Name {
+  grid-column: 1/3;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.Profile_Client_Counter_Container {
+  grid-column: 1;
+  grid-row: 3;
+  border-right: 1.5px solid #e1e2e6;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+}
+
+.Profile_Status {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+
+.ProfileInfo_Grid {
+  display: grid;
+  grid-template: auto/4fr 5fr;
+  gap: 20px 4px;
+}
+
+.truncateText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.ClientItem {
+  display: grid;
+  grid-template: 1fr 1fr / 50px 1fr auto;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 3px 10px;
+  transition: all 500ms ease;
+  margin-bottom: 15px;
+}
+
+.ClientItem>img {
+  border-radius: 50px;
+  grid-row: 1/3;
+  grid-column: 1;
+}
+
+.ClientItemDate {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.ClientBTN {
+  grid-row: 1/3;
+  grid-column: 3;
+  margin: auto;
+  font-size: var(--size-4);
+  font-weight: 500;
+}
+
+.ClientItem:hover {
+  box-shadow: 0px 1px 20px rgba(40, 42, 62, 0.07);
+}
+
+.infoTitle {
+  margin: auto auto auto 0;
+}
+
+.infoAnswer {
+  margin: auto 0 auto auto;
+  text-align: right;
+}
+
+@media (max-width: 550px) {
+  .Container {
+    grid-template-columns: 100%;
+    padding: 0 0 0;
+    gap: 30px;
+  }
+
+  .infoContainer {
+    /* display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: fit-content; */
+    gap: 10px;
+    grid-row: 1;
+    padding: 0 16px;
+  }
+
+  .TopInfo {
+    padding-bottom: 25px;
+    padding-top: 40px;
+    border-bottom: none;
+    background: #ffffff;
+    box-shadow: 0px 2px 20px rgba(40, 42, 62, 0.04);
+    border-radius: 12px;
+    grid-template: auto auto / 1fr 1fr 1fr;
+    position: relative;
+    margin-top: 44px;
+  }
+
+  .TopInfo>img {
+    grid-column: unset;
+    grid-row: unset;
+    width: 80px;
+    border-radius: 80px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -43px;
+    border: 5px solid #fafafc;
+  }
+
+  .Name {
+    grid-column: 1/4;
+    grid-row: 1;
+  }
+
+  .Profile_Client_Age {
+    grid-column: 1;
+    gap: 2px;
+  }
+
+  .Profile_Client_Counter_Container {
+    grid-column: 2;
+    grid-row: 2;
+    border-left: 1.5px solid #e1e2e6;
+    gap: 2px;
+  }
+
+  .Profile_Status {
+    grid-column: 3;
+    grid-row: 2;
+    gap: 2px;
+  }
+
+  .ProfileInfo_Grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 0;
+    background: #ffffff;
+    box-shadow: none;
+    border-radius: 12px;
+    border: 1px solid #e1e2e6;
+  }
+
+  .ProfileInfo_Grid>div:first-of-type {
+    grid-template-columns: 1fr 1fr;
+    gap: unset;
+    grid-template-rows: unset;
+  }
+
+  .ProfileInfo_Grid>div:last-of-type {
+    grid-template-columns: 4fr 6fr;
+    grid-template-rows: unset;
+    gap: unset;
+  }
+
+  .OtherInfoItemMini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #e1e2e6;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+
+  .OtherInfoItemMini:nth-of-type(10) {
+    grid-template-columns: 4fr 6fr;
+    border-bottom: none;
+  }
+
+  .OtherInfoItemMini.active {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .OtherInfoShowMore {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .OtherInfoShowMore>img {
+    transform: rotate(90deg);
+  }
+
+  .OtherInfoShowMore.active>img {
+    transform: rotate(-90deg);
+  }
+
+  .Tabs {
+    display: grid;
+    grid-template-columns: repeat(4, max-content) 2px;
+    gap: 30px;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+  }
+
+  .Tabs::-webkit-scrollbar {
+    margin-top: 4px;
+  }
+
+  .Tabs>.TabItem:first-of-type {
+    margin-left: 16px;
+  }
+
+  .TabItem {
+    font-size: var(--size-4);
+    z-index: 2;
+    transition: none;
+  }
+
+  .TabItem.active {
+    font-weight: 500;
+    color: var(--black);
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ffd020;
+  }
+
+  .TabItem:hover {
+    transform: translateY(0);
+  }
+
+  .tabLine {
+    border-bottom: 1.5px solid #e1e2e6;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .Card {
+    background: #ffffff;
+    border: 1px solid #e1e2e6;
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .tabbody {
+    padding: 6px 16px 80px;
+  }
+
+  .ClientItem {
+    grid-template: 1fr 1fr / 42px 1fr;
+    box-shadow: 0px 2px 15px rgba(40, 42, 62, 0.04);
+    border-radius: 12px;
+    padding: 12px;
+    gap: 2px 10px;
+    margin-bottom: 10px;
+  }
+
+  .ClientItem>img {
+    width: 42px;
+    border-radius: 42px;
+  }
+
+  .ClientItemDate {
+    grid-row: 2;
+    grid-column: 2;
+  }
+}

@@ -1,0 +1,34 @@
+.inputContainer {
+  text-align: left;
+  position: relative;
+}
+.label {
+  color: var(--darkgray);
+  font-weight: 500;
+  size: 16px;
+}
+.Select {
+  width: 100%;
+  padding: 0 0 0 20px;
+  height: 62px;
+  border: 1.2px solid #e1e2e6;
+  border-radius: 8px;
+  margin-top: 6px;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: var(--size-5);
+  color: var(--lightgray);
+  transition: all 0.4s;
+  appearance: none;
+  position: relative;
+}
+.arrow {
+  position: absolute;
+  transform: rotate(270deg);
+  bottom: 20px;
+  right: 22px;
+}
+
+.Select:focus {
+  outline: none;
+}

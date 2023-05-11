@@ -1,0 +1,117 @@
+.DaysContainer {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.DaysScroll {
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: grid;
+  gap: 15px;
+  height: 78px;
+  /* scroll-behavior: smooth; */
+}
+
+.DaysScroll::-webkit-scrollbar {
+  height: 0;
+}
+
+.Day {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms;
+}
+.Day > span {
+  font-weight: 600;
+  font-size: var(--size-8);
+  color: var(--darkgray);
+  opacity: 0.6;
+}
+.Day > div {
+  font-weight: 500;
+  font-size: var(--size-4);
+  color: var(--lightgray);
+  opacity: 0.6;
+}
+.Day:first-of-type {
+  margin-left: 15px;
+}
+.Day:last-of-type {
+  margin-right: 15px;
+}
+
+.Day.Active {
+  background: var(--SecondaryRed);
+}
+.Day.Active > span,
+.Day.Active > div {
+  color: white;
+  opacity: 1;
+}
+
+.Day.Active ~ .Day > span {
+  opacity: 1;
+}
+.Day.Active ~ .Day > div {
+  opacity: 1;
+}
+
+.leftShoadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60px;
+  background: linear-gradient(
+    90deg,
+    #ffffff -2.04%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+}
+.rightShadow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 60px;
+  background: linear-gradient(
+    270deg,
+    #ffffff -2.04%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+}
+@media (max-width: 550px) {
+  .DaysScroll {
+    gap: 6px;
+    height: 59px;
+    /* scroll-behavior: smooth; */
+  }
+
+  .Day > span {
+    font-size: var(--size-4);
+  }
+  .Day > div {
+    font-size: var(--size-2);
+  }
+  .Day:first-of-type {
+    margin-left: 0;
+  }
+  .Day:last-of-type {
+    margin-right: 0;
+  }
+  .Day.Active > div {
+    opacity: 0.8;
+  }
+  .Day.Active {
+    box-shadow: 0px 2px 10px rgba(245, 137, 134, 0.3);
+  }
+}

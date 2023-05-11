@@ -1,0 +1,196 @@
+.Card {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 25px rgba(40, 42, 62, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.HeaderTitle {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E1E2E6;
+
+}
+
+.HeaderInfo {
+    color: var(--lightgray);
+    font-size: var(--size-6);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.HeaderInfo>img {
+    width: 30px;
+    border-radius: 30px;
+    margin-right: 8px;
+}
+
+.Tabs {
+    display: flex;
+    gap: 35px;
+}
+
+.TabItem {
+    font-weight: 400;
+    font-size: var(--size-6);
+    color: var(--darkgray);
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.TabItem:hover {
+    transform: translateY(-4px);
+}
+
+.TabItem.active {
+    font-weight: 500;
+    color: var(--black);
+    padding-bottom: 2px;
+    border-bottom: 2px solid #ffd020;
+}
+
+@keyframes fadeIN {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.tabbody {
+    padding: 25px 0;
+    display: none;
+}
+
+.tabbody.active {
+    display: grid;
+    animation: fadeIN 300ms ease-in;
+}
+
+.bgGray {
+    background: rgba(40, 42, 62, 0.03);
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.bgWhite {
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.ReportTitle {
+    font-weight: 500;
+    font-size: var(--size-6);
+    color: var(--darkgray);
+}
+
+.ReportValue {
+    font-weight: 400;
+    font-size: var(--size-6);
+    color: var(--lightgray);
+}
+
+.AffectedSection {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.AffectedTableHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E1E2E6;
+    /* margin-bottom: 10px; */
+}
+
+.AffectedTableHeader:last-of-type,
+.NotifiedTableHeader:last-of-type {
+    border-bottom: none;
+}
+
+.NotifiedTableHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E1E2E6;
+}
+
+
+@media (max-width: 550px) {
+    .card {
+        padding: 16px;
+    }
+
+    .Tabs {
+        display: flex;
+
+        gap: 30px;
+        width: 100%;
+        overflow: auto;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .Tabs::-webkit-scrollbar {
+        margin-top: 4px;
+    }
+
+    .Tabs>.TabItem:first-of-type {
+        margin-left: 16px;
+    }
+
+    .TabItem {
+        font-size: var(--size-4);
+        z-index: 2;
+        transition: none;
+    }
+
+    .TabItem.active {
+        font-weight: 500;
+        color: var(--black);
+        padding-bottom: 5px;
+        border-bottom: 2px solid #ffd020;
+    }
+
+    .TabItem:hover {
+        transform: translateY(0);
+    }
+
+    .tabLine {
+        border-bottom: 1.5px solid #e1e2e6;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .tabbody {
+        padding: 6px 16px 80px;
+    }
+
+    .BodyTitle {
+        grid-column: 1;
+    }
+
+    .ReportTitle {
+        font-size: var(--size-4);
+    }
+
+    .ReportValue {
+        font-size: var(--size-2);
+        text-align: right;
+    }
+
+}

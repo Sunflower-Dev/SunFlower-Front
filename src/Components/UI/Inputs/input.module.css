@@ -1,0 +1,147 @@
+.inputContainer {
+  text-align: left;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 0;
+  height: 62px;
+  border: 1.2px solid #e1e2e6;
+  border-radius: 8px;
+  margin-top: 6px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: var(--size-5);
+  color: var(--lightgray);
+  transition: all 0.4s;
+}
+
+.filelabel {
+  width: 100%;
+  padding: 20px;
+  /* height: 62px; */
+  border: 1.2px solid #e1e2e6;
+  border-radius: 8px;
+  margin-top: 6px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: var(--size-4);
+  color: var(--lightgray);
+  transition: all 0.4s;
+  display: grid;
+  grid-template-columns: 1fr 22px;
+  cursor: pointer;
+}
+
+.input::placeholder {
+  color: var(--lightgray);
+  opacity: 1;
+  /* Firefox */
+}
+
+.label {
+  color: var(--darkgray);
+  font-weight: 500;
+  size: 16px;
+}
+
+.input:hover {
+  background: #fdfdfd;
+  border: 1.2px solid #c4c7cc;
+}
+
+.input:active,
+.input:focus {
+  background: #fdfdfd;
+  border: 1.2px solid #c4c7cc;
+  outline: none !important;
+  color: var(--darkgray);
+}
+
+.haveError,
+.haveError:hover {
+  border: 1.2px solid var(--SecondaryRed);
+}
+
+.svg {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 20px;
+  top: 49px;
+}
+
+.searchsvg {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 14px;
+  top: 20px;
+}
+
+.Line {
+  position: absolute;
+  left: 52px;
+  top: 22px;
+  height: 20px;
+  border: 1px solid #e1e2e6;
+}
+
+.eye {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  right: 20px;
+  top: 50px;
+  cursor: pointer;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.eye.active {
+  opacity: 1;
+}
+
+.input:active+.svg>path,
+.input:focus+.svg>path {
+  stroke: #5e5f6e;
+}
+
+.haveError+.svg>path,
+.haveError:active+.svg>path,
+.haveError:focus+.svg>path {
+  stroke: var(--SecondaryRed);
+}
+
+.error {
+  color: var(--SecondaryRed);
+  margin-top: 8px;
+  display: flex;
+  align-items: flex-start;
+  transition: all 0.4s;
+}
+
+.error>span {
+  margin-left: 8px;
+}
+
+@media (max-width: 550px) {
+  .input {
+    font-weight: 400;
+    font-size: var(--size-3);
+    height: 56px;
+  }
+
+  .label {
+    font-size: var(--size-4);
+  }
+
+  .eye {
+    top: 48px;
+  }
+}

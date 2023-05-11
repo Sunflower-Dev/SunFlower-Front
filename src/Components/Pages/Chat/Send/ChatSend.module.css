@@ -1,0 +1,36 @@
+.Container {
+  display: grid;
+  grid-template: auto auto/1fr 45px;
+  gap: 4px 10px;
+  align-items: end;
+  justify-items: end;
+  margin-bottom: 10px;
+}
+
+.Message {
+  background: #f5f5fa;
+  border-radius: 15px 15px 0px 15px;
+  padding: 15px;
+  max-width: 70%;
+}
+.Message > img {
+  max-width: 100%;
+}
+.Message > a {
+  color: #0000ee;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.Container > img {
+  border-radius: 45px;
+}
+@media (max-width: 550px) {
+  .Container {
+    grid-template: auto auto/1fr;
+    gap: 4px;
+  }
+  .Message {
+    max-width: 74%;
+  }
+}

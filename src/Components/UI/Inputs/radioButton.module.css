@@ -1,0 +1,70 @@
+.RadioButton,
+.GreenRadioButton {
+  text-align: left;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 18px 1fr;
+}
+.RadioButton > input,
+.GreenRadioButton > input {
+  width: 20px;
+  height: 20px;
+  border: 1.2px solid #e1e2e6;
+  border-radius: 18px;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+}
+
+.RadioButton > input:checked {
+  background-color: var(--SecondaryRed);
+  border: 1.2px solid var(--SecondaryRed);
+}
+.GreenRadioButton > input:checked {
+  background-color: var(--green);
+  border: 1.2px solid var(--green);
+}
+
+.RadioButton > input:checked:after,
+.GreenRadioButton > input:checked:after {
+  content: "";
+  font-size: var(--size-4);
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  color: var(--white);
+  width: 11px;
+  height: 11px;
+  border: solid white;
+  border-width: 2.5px;
+  border-radius: 10px;
+}
+.label {
+  cursor: pointer;
+}
+
+@media (max-width: 550px) {
+  .label {
+    font-size: var(--size-3) !important;
+  }
+  .RadioButton,
+  .GreenRadioButton {
+    grid-template-columns: 16px 1fr;
+  }
+  .RadioButton > input,
+  .GreenRadioButton > input {
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+  }
+  .RadioButton > input:checked:after,
+  .GreenRadioButton > input:checked:after {
+    top: 1px;
+    left: 1px;
+    width: 8px;
+    height: 8px;
+    border-width: 2px;
+  }
+}

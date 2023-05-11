@@ -1,0 +1,153 @@
+.Container {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 30px;
+}
+
+.Card {
+  background: #ffffff;
+  box-shadow: 0px 1px 20px rgba(40, 42, 62, 0.05);
+  border-radius: 15px;
+  padding: 25px 20px;
+}
+
+.navItem {
+  text-decoration: none;
+  color: var(--lightgray);
+  display: flex;
+  cursor: pointer;
+  gap: 8px;
+  font-weight: 400;
+  font-size: var(--size-6);
+  align-items: center;
+}
+.navItem.active {
+  font-weight: 500;
+  color: var(--darkgray);
+}
+
+.password {
+  margin-top: 25px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e1e2e6;
+}
+.Notifs {
+  margin-top: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e1e2e6;
+}
+
+.More {
+  margin-top: 18px;
+}
+.navItem.active path {
+  stroke: #5e5f6e;
+}
+
+.BodyContainer {
+  animation: FadeIN 500ms ease;
+}
+
+.dashed {
+  background-image: linear-gradient(
+    to right,
+    #e1e2e6 33%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  height: 2px;
+  background-position: bottom;
+  background-size: 26px 1.5px;
+  background-repeat: repeat-x;
+  margin: 20px 0;
+}
+.notificationbody {
+  display: grid;
+  grid-template: auto 1fr /1fr;
+  gap: 25px;
+}
+
+.Line {
+  border-bottom: 1px solid #e1e2e6;
+  margin: 20px 0;
+}
+@keyframes FadeIN {
+  0% {
+    opacity: 0;
+    transform: translateY(12%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 550px) {
+  .Card {
+    padding: 16px;
+  }
+  .Container {
+    display: grid;
+    grid-template: 1fr/1fr;
+    gap: 20px;
+    padding: 0 16px;
+  }
+  .MiniHeader_TitleMode {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 19px 0;
+    box-sizing: border-box;
+  }
+  .MiniHeader_TitleMode > div {
+    margin: auto;
+  }
+  .navItem {
+    text-decoration: none;
+    color: var(--darkgray);
+    display: grid;
+    grid-template-columns: 24px 1fr 18px;
+    gap: 14px;
+    font-weight: 400;
+    font-size: var(--size-4);
+    align-items: center;
+  }
+
+  .password {
+    margin-top: 0;
+    padding-bottom: 22px;
+    border-bottom: none;
+  }
+  .Notifs {
+    margin-top: 0;
+    padding-bottom: 22px;
+    border-bottom: none;
+  }
+  .More {
+    margin-top: 0;
+  }
+  .navItem.active {
+    font-weight: 400;
+  }
+  .navItem path {
+    stroke: #5e5f6e;
+  }
+  .BodyContainer {
+    padding: 20px 16px;
+  }
+  .notificationbody {
+    grid-template: auto 1fr /1fr;
+  }
+  .Line {
+    border-bottom: none;
+    margin: 25px 0;
+    background-image: linear-gradient(
+      to right,
+      #e1e2e6 33%,
+      rgba(255, 255, 255, 0) 0%
+    );
+    height: 2px;
+    background-position: bottom;
+    background-size: 26px 1.5px;
+    background-repeat: repeat-x;
+  }
+}

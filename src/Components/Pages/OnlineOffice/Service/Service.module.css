@@ -1,0 +1,381 @@
+.Header {
+  display: grid;
+  grid-template: auto 1fr/1fr auto auto;
+  gap: 6px 14px;
+  padding-bottom: 21px;
+  border-bottom: 1px solid #e1e2e6;
+}
+
+.ServiceTitle {
+  grid-row: 1;
+  grid-column: 1;
+  margin: 0;
+}
+
+.ServiceInfo {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.EditServiceBTN {
+  grid-row: 1/3;
+  grid-column: 2;
+  margin: auto 0;
+}
+
+.DeleteServiceBTN {
+  grid-row: 1/3;
+  grid-column: 3;
+  margin: auto 0;
+}
+
+.FoldersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0 25px;
+}
+
+.AddFolderButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.FoldersContainer {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+}
+
+
+
+.FolderItem {
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  border-radius: 12px;
+  display: grid;
+  grid-template: auto auto/auto 24px;
+  padding: 20px;
+  gap: 12px 30px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  position: relative;
+}
+
+.FolderItem.active {
+  border: 1px solid #fff;
+  background: #ffffff;
+  box-shadow: 0px 2px 24px rgba(40, 42, 62, 0.04);
+  border-radius: 12px;
+}
+
+.FolderTitle {
+  width: 225px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-self: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 24px;
+}
+
+.FolderAction {
+  margin: auto 0;
+}
+
+.DocumentsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-column: 1/3;
+}
+
+.UploadContainer {
+  border: 2px dashed #e1e2e6;
+  border-radius: 12px;
+  min-height: 171px;
+  grid-row: 2;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.UploadContainer>img {
+  margin-bottom: 10px;
+}
+
+.DocumentContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  animation: fadeIN 500ms ease;
+}
+
+@keyframes fadeIN {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.actionContainer {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 18px rgba(40, 42, 62, 0.15);
+  border-radius: 12px;
+  width: 226px;
+  top: 16px;
+  right: 50px;
+  z-index: 10;
+  padding: 14px 16px;
+  flex-direction: column;
+}
+
+.fadein {
+  animation: ActionFadeIN 300ms ease-in-out;
+}
+
+.fadeout {
+  animation: FadeOUT 300ms ease-in-out;
+}
+
+@keyframes ActionFadeIN {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes FadeOUT {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+}
+
+.ActionItem {
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e2e6;
+  display: flex;
+  cursor: pointer;
+}
+
+.ActionItem>img {
+  margin-right: 8px;
+}
+
+.actionContainer>.ActionItem:first-of-type {
+  padding: 0 0 10px;
+}
+
+.actionContainer>.ActionItem:last-of-type {
+  padding: 10px 0 0;
+  border-bottom: none;
+}
+
+.MobileHeader {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 25px rgba(40, 42, 62, 0.03);
+  align-items: center;
+  justify-items: center;
+  padding: 10px 16px;
+}
+
+
+.ActionButton {
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+  background: var(--SecondaryRed);
+  position: absolute;
+  bottom: 30px;
+  right: 16px;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.ActionButton>img {
+  transition: all 300ms ease;
+}
+
+.ActionButton.active>img {
+  transform: rotate(45deg);
+}
+
+.ActionContainer {
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 4;
+  display: none;
+
+}
+
+.ActionContainer.active {
+  display: flex;
+  animation: ScaleIN 300ms ease;
+}
+
+@keyframes ScaleIN {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ActionItem {
+  display: grid;
+  grid-template-columns: auto 44px;
+  gap: 8px;
+  border-bottom: none;
+  padding: 0;
+}
+
+.ActionItemTitle {
+  color: var(--darkgray);
+  font-weight: 400;
+  font-size: var(--size-2);
+  padding: 5px 14px;
+  background: white;
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 15px rgba(40, 42, 62, 0.04);
+  border-radius: 4px;
+  height: 28px;
+  margin: auto 0 auto auto;
+}
+
+.ActionItemIcon {
+  width: 44px;
+  height: 44px;
+  background: white;
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 15px rgba(40, 42, 62, 0.04);
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width:550px) {
+  .ServiceTitle {
+    margin: 0 0 0;
+  }
+
+  .Header {
+    grid-template: auto /auto;
+    gap: 10px;
+    padding: 20px 16px 10px;
+    border-bottom: 1px solid #e1e2e6;
+  }
+
+  .FoldersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 16px 15px;
+  }
+
+  .FoldersContainer {
+    display: flex;
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+
+  .FolderItem {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 15px rgba(40, 42, 62, 0.02);
+    border-radius: 12px;
+    border: none;
+    grid-template: auto auto auto/auto 20px;
+    padding: 20px;
+    gap: 10px 4px;
+    position: relative;
+  }
+
+  .FolderItem.active {
+    border: 1px solid #e1e2e6;
+    box-shadow: 0px 2px 15px rgba(40, 42, 62, 0.06);
+    background: #ffffff;
+    border-radius: 12px;
+  }
+
+  .FolderAction {
+    grid-row: 1;
+    grid-column: 2;
+    margin: 0 0 auto auto;
+  }
+
+  .FolderTitle {
+    width: 160px;
+    line-height: 20px;
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .actionContainer {
+    right: unset;
+    top: 50px;
+    left: 0;
+    z-index: 10;
+    padding: 14px 16px;
+    flex-direction: column;
+  }
+
+  .DocumentContainer {
+    background: #ffffff;
+    box-shadow: 0px -2px 25px rgba(40, 42, 62, 0.03);
+    border-radius: 25px 25px 0px 0px;
+    margin-top: 24px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px 20px;
+    gap: 16px 0;
+  }
+
+  .PopUpItem {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+
+  .PopUpItem:last-of-type {
+    margin-bottom: 0;
+  }
+}

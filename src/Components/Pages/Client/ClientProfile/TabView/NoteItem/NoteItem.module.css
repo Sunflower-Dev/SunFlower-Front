@@ -1,0 +1,136 @@
+.Container {
+  background: #ffffff;
+  box-shadow: 0px 6px 24px rgba(40, 42, 62, 0.05);
+  border-radius: 12px;
+  padding: 25px 20px 15px;
+  height: 294px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.Description {
+  border-bottom: 1px solid #e1e2e6;
+  padding-bottom: 60px;
+  margin-bottom: 0;
+  overflow: auto;
+}
+
+.footer {
+  display: grid;
+  grid-template: 1fr 1fr / 45px 1fr 24px;
+  gap: 2px 10px;
+  padding-top: 15px;
+  position: relative;
+}
+
+.footer>img:first-of-type {
+  grid-row: 1/3;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 45px;
+}
+
+.Date {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.Action {
+  height: 26px;
+  grid-row: 1/3;
+  margin: auto;
+  cursor: pointer;
+}
+
+.actionContainer {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e1e2e6;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 18px rgba(40, 42, 62, 0.15);
+  border-radius: 12px;
+  width: 226px;
+  top: 14px;
+  right: 260px;
+  z-index: 10;
+  padding: 14px 16px;
+  flex-direction: column;
+}
+
+.fadein {
+  animation: FadeIN 300ms ease-in-out;
+}
+
+.fadeout {
+  animation: FadeOUT 300ms ease-in-out;
+}
+
+@keyframes FadeIN {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes FadeOUT {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+}
+
+.ActionItem {
+  display: flex;
+  cursor: pointer;
+}
+
+.ActionItem>img {
+  margin-right: 8px;
+}
+
+@media (max-width: 550px) {
+  .Container {
+    box-shadow: none;
+    padding: 12px;
+    height: 190px;
+    border: 1px solid #e1e2e6;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .Description {
+    padding-bottom: 10px;
+    max-height: unset;
+  }
+
+  .footer {
+    grid-template: 1fr / 24px 1fr;
+    gap: 10px;
+    padding-top: 8px;
+  }
+
+  .footer>img:first-of-type {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    object-position: top;
+    grid-row: 1;
+  }
+
+  .Date {
+    margin: auto 0 auto auto;
+    grid-row: 1;
+  }
+}

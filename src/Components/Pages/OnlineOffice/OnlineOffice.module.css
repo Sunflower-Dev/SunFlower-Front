@@ -1,0 +1,357 @@
+.Tabs {
+  display: flex;
+  gap: 35px;
+}
+
+.TabItem {
+  font-weight: 400;
+  font-size: var(--size-6);
+  color: var(--darkgray);
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.TabItem:hover {
+  transform: translateY(-4px);
+}
+
+.TabItem.active {
+  font-weight: 500;
+  color: var(--black);
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ffd020;
+}
+
+@keyframes fadeIN {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.tabbody {
+  padding: 28px 0;
+  display: none;
+}
+
+.tabbody.active {
+  display: grid;
+  animation: fadeIN 500ms ease;
+}
+
+.tabHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Documents {
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.Documents>.tabHeader {
+  grid-column: 1/3;
+}
+
+.Notes {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+}
+
+.Notes>.tabHeader {
+  grid-column: 1/4;
+}
+
+.UploadContainer {
+  border: 2px dashed #e1e2e6;
+  border-radius: 12px;
+  min-height: 171px;
+  grid-row: 2;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.UploadContainer>img {
+  margin-bottom: 10px;
+}
+
+.AddNote {
+  border: 2px dashed #e1e2e6;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 294px;
+  cursor: pointer;
+}
+
+.DeputyItem {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 300ms;
+  display: grid;
+  grid-template: 1fr 1fr/50px 1fr 41px auto;
+  gap: 3px 10px;
+  box-shadow: 0px 1px 20px rgba(40, 42, 62, 0.02);
+}
+
+.DeputyItem:hover {
+  box-shadow: 0px 1px 20px rgba(40, 42, 62, 0.1);
+}
+
+.DeputyItem>img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50px;
+  grid-column: 1;
+  grid-row: 1/3;
+}
+
+.DeputyText {
+  grid-row: 2;
+}
+
+.DeputyButton {
+  grid-row: 1/3;
+  margin: auto 0;
+}
+
+.ServiceItem {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 300ms;
+  display: grid;
+  grid-template: 1fr 1fr/51px 4fr 6fr 42px;
+  gap: 8px 12px;
+  box-shadow: 0px 1px 20px rgba(40, 42, 62, 0.01);
+  cursor: pointer;
+}
+
+.ServiceItem:hover {
+  box-shadow: 0px 1px 20px rgba(40, 42, 62, 0.08);
+}
+
+.ServiceCounter {
+  width: 51px;
+  height: 51px;
+  border-radius: 52px;
+  background: #ffcf2048;
+  grid-column: 1;
+  grid-row: 1/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd020;
+  font-size: var(--size-10);
+  font-weight: 500;
+}
+
+.ServiceInfo {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.ServiceDescription {
+  grid-row: 1/3;
+  grid-column: 3;
+  border-left: 1px solid #e1e2e6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-self: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 24px;
+}
+
+.ServiceArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 4;
+  grid-row: 1/3;
+  background: #edeef1;
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
+  margin: auto;
+}
+
+
+@media (max-width:550px) {
+  .Tabs {
+    padding: 22px 0 20px;
+    gap: 30px;
+    background: #ffffff;
+    justify-content: center;
+    box-shadow: 0px 2px 25px rgba(40, 42, 62, 0.03);
+  }
+
+  .TabItem {
+    font-size: var(--size-4);
+  }
+
+  .TabItem.active {
+    font-size: var(--size-4);
+    z-index: 2;
+  }
+
+  .tabbody {
+    padding: 20px 16px;
+  }
+
+  .DeputyItem {
+    grid-template: auto auto/48px 1fr 41px auto;
+    gap: 5px 10px;
+    box-shadow: none;
+    border: 1px solid #E1E2E6;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+
+  .DeputyItem>img {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    grid-column: 1;
+    grid-row: 1/3;
+  }
+
+  .Documents {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .Documents>.tabHeader {
+    grid-column: 1;
+  }
+
+
+  .Notes {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .Notes>.tabHeader {
+    grid-column: 1/3;
+  }
+
+  .ServiceItem {
+    border: 1px solid #E1E2E6;
+    box-sizing: border-box;
+    grid-template: 1fr 1fr/48px 1fr 24px;
+    gap: 5px 10px;
+    box-shadow: none;
+  }
+
+  .ServiceCounter {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+  }
+
+  .ServiceItem>img {
+    grid-row: 1/3;
+    grid-column: 3;
+    margin: auto;
+  }
+
+
+  .ActionButton {
+    width: 56px;
+    height: 56px;
+    border-radius: 56px;
+    background: var(--SecondaryRed);
+    position: absolute;
+    bottom: 82px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .ActionButton>img {
+    transition: all 300ms ease;
+  }
+
+  .ActionButton.active>img {
+    transform: rotate(45deg);
+  }
+
+  .ActionContainer {
+    position: absolute;
+    bottom: 154px;
+    right: 20px;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 4;
+    display: none;
+
+  }
+
+  .ActionContainer.active {
+    display: flex;
+    animation: ScaleIN 300ms ease;
+  }
+
+  @keyframes ScaleIN {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .ActionItem {
+    display: grid;
+    grid-template-columns: auto 44px;
+    gap: 8px;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .ActionItemTitle {
+    color: var(--darkgray);
+    font-weight: 400;
+    font-size: var(--size-2);
+    padding: 5px 14px;
+    background: white;
+    border: 1px solid #e1e2e6;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 15px rgba(40, 42, 62, 0.04);
+    border-radius: 4px;
+    height: 28px;
+    margin: auto 0 auto auto;
+  }
+
+  .ActionItemIcon {
+    width: 44px;
+    height: 44px;
+    background: white;
+    border: 1px solid #e1e2e6;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 15px rgba(40, 42, 62, 0.04);
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+  }
+
+}
